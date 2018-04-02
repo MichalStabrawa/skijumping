@@ -2,16 +2,17 @@
     float: none;
 }
 
-h1{
+h1 {
     text-align: center;
 }
 
 
 /*header style*/
 
-header {display:flex;
+header {
+    display: flex;
     justify-content: center;
-    align-items:center;
+    align-items: center;
     background: #002395;
     height: 250px;
 }
@@ -20,22 +21,27 @@ header h1 {
     color: #fff;
     text-align: center;
     margin: 0px;
-  background:transparent;
+    background: transparent;
 }
 
-.btn-primary{
+.btn-primary {
     margin-bottom: 10px;
-    margin-top:10px;
+    margin-top: 10px;
 }
+
 
 /*footer style*/
-footer{display: flex;
+
+footer {
+    display: flex;
     justify-content: center;
     align-items: center;
     height: 30vh;
-    background:  #002395;;
+    background: #002395;
+    ;
 }
 
-footer i{
-    color:#fff;
+footer i {
+    margin: 10px;
+    color: #fff;
 }
