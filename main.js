@@ -40,4 +40,4 @@ app.controller('kontrolerTabeli', ['$scope', '$filter', function ($scope, $filte
 }
 
 
-]);
+])

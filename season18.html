@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Wyniki-2018</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body ng-app="konkursy2018">
+    <!--header-->
+    <header>
+        <img src="icons/icons8-ski-jumping-100%20(1).png" alt="ski jumping">
+        <h1>Ski Jumping 2018 Konkursy</h1>
+    </header>
+    <!--nav-->
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a href="index.html">Home</a></li>
+        <li role="presentation" class="active"><a href="#">Konkursy 2017/2018</a></li>
+        <li role="presentation"><a href="">Konkursy 2016/2017</a></li>
+        <li role="presentation"><a href="#">Konkursy 2015/2016</a></li>
+        <li role="presentation"><a href="#">Konkursy 2014/2015</a></li>
+        <li role="presentation"><a href="#">Konkursy 2013/2014</a></li>
+        <li role="presentation"><a href="#">Konkursy 2012/2013</a></li>
+        <li role="presentation"><a href="#">Konkursy 2011/2012</a></li>
+        <li role="presentation"><a href="#">Konkursy 2010/2011</a></li>
+
+    </ul>
+
+    <!--container-->
+    <div class="container" ng-controller="kontrolerWynikow2018">
+        <div class="row">
+            <div class="col-sm-8 center-block">
+                <h1><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">Klasyfikacja skoczków narciarskich</h1>
+                <!-- Single button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Wybierz konkurs<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" ng-click="wisla()">Wisla(POL) 19.11.2018</a></li>
+
+
+                    </ul>
+                </div>
+
+
+                <div class="input-group"><span class="input-group-addon">Szukaj</span>
+                    <input type="text" class="form-control" ng-model="wyszukaj">
+
+                </div>
+
+                <!--table zawody Wisla 19.11-2017-->
+
+                <div class="table-responsive" ng-show="showResult">
+
+                    <table class="table table-striped">
+                        <h3>Wisla(POL) 19.11.2017</h3>
+                        <thead>
+                            <tr>
+                                <th>Miejsce</th>
+                                <th>Imie</th>
+                                <th>Rok urodzenia</th>
+                                <th>Kraj</th>
+                                <th>Punkty</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat='skoczekW in skoczkowieWisla1 | filter : wyszukaj '>
+
+
+                                <td><strong>{{skoczekW.Rank}}</strong></td>
+                                <td>{{skoczekW.Name}}</td>
+                                <td>{{skoczekW.Year}}</td>
+                                <td>{{skoczekW.Nation}}</td>
+
+                                <td>{{skoczekW.Points}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!--footer-->
+    <footer>
+        <a href="https://github.com/MichalStabrawa"> <i class="fab fa-3x fa-github"></i></a> <a href="https://www.linkedin.com/in/michal-stabrawa-48b408102/"><i class="fab fa-3x fa-linkedin-in"></i></a>
+    </footer>
+
+
+    <!--script-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="konkursydata2018.js"></script>
+    <script src="konkursy2018.js"></script>
+
+</body>
+
+</html>

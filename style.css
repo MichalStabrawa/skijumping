@@ -13,7 +13,9 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #002395;
+    background-image: linear-gradient(rgba(45, 4, 129, 0.9), rgba(45, 4, 129, 0.9)),url(img/skocznia.jpg);
+    background-position: center;
+    background-size: cover;
     height: 250px;
 }
 
