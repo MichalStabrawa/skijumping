@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ANgular-Aplikacja-Skoczkowie</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-app="aplikacja">
+
+    <header>
+        <img src="icons/icons8-ski-jumping-100%20(1).png" alt="ski jumping">
+        <h1>Ski Jumping 2018</h1>
+    </header>
+    <!--nav-->
+    <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Konkursy 2017/2018</a></li>
+        <li role="presentation"><a href="#">Konkursy 2016/2017</a></li>
+        <li role="presentation"><a href="#">Konkursy 2015/2016</a></li>
+        <li role="presentation"><a href="#">Konkursy 2014/2015</a></li>
+          <li role="presentation"><a href="#">Konkursy 2013/2014</a></li>
+        <li role="presentation"><a href="#">Konkursy 2012/2013</a></li>
+        <li role="presentation"><a href="#">Konkursy 2011/2012</a></li>
+        <li role="presentation"><a href="#">Konkursy 2010/2011</a></li>
+        
+    </ul>
+
+    <div class="container" ng-controller="kontrolerTabeli">
+        <div class="row">
+            <div class="col-sm-8 center-block">
+                <h1><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">Klasyfikacja skoczków narciarskich</h1>
+                <!-- Single button -->
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Rok zawodów<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" ng-click="myFunc()">2018</a></li>
+                        <li><a href="#" ng-click="myFunc2()">2017</a></li>
+                        <li><a href="#" ng-click="myFunc3()">2016</a></li>
+                        <li><a href="" ng-click="myFunc4()">2015</a></li>
+
+                    </ul>
+                </div>
+
+
+                <div class="input-group"><span class="input-group-addon">Szukaj</span>
+                    <input type="text" class="form-control" ng-model="wyszukiwarka">
+
+                </div>
+
+                <!--table-->
+
+                <div class="table-responsive" ng-show="showMe">
+                    <h3>2018</h3>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th ng-repeat="naglowek in ['Imie','Kraj','Miejsce','Punkty']">
+                                    {{naglowek}}
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat='skoczek in skoczkowie | filter : wyszukiwarka '>
+
+
+                                <td><strong>{{skoczek.Name}}</strong></td>
+                                <td>{{skoczek.Nation}}</td>
+                                <td>{{skoczek.rank}}</td>
+                                <td>{{skoczek.pts}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--table 2-->
+                <div class="table-responsive" ng-show="showMe2">
+                    <h3>2017</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th ng-repeat="naglowek2 in ['Imie','Kraj','Miejsce','Punkty']">
+                                    {{naglowek2}}
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat='skoczekJeden in skoczkowie2 | filter : wyszukiwarka '>
+
+
+                                <td><strong>{{skoczekJeden.Name}}</strong></td>
+                                <td>{{skoczekJeden.Nation}}</td>
+                                <td>{{skoczekJeden.rank}}</td>
+                                <td>{{skoczekJeden.pts}}</td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--table3-->
+                <div class="table-responsive" ng-show="showMe3">
+                    <h3>2016</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th ng-repeat="naglowek3 in ['Imie','Kraj','Miejsce','Punkty']">
+                                    {{naglowek3}}
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat='skoczek2016 in skoczkowie3 | filter : wyszukiwarka '>
+
+
+                                <td><strong>{{skoczek2016.Name}}</strong></td>
+                                <td>{{skoczek2016.Nation}}</td>
+                                <td>{{skoczek2016.rank}}</td>
+                                <td>{{skoczek2016.pts}}</td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!--2015 table-->
+                <div class="table-responsive" ng-show="showMe4">
+                    <h3>2015</h3>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th ng-repeat="naglowek4 in ['Imie','Kraj','Miejsce','Punkty']">
+                                    {{naglowek4}}
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat='skoczek2015 in skoczkowie4 | filter : wyszukiwarka '>
+
+
+                                <td><strong>{{skoczek2015.Name}}</strong></td>
+                                <td>{{skoczek2015.Nation}}</td>
+                                <td>{{skoczek2015.rank}}</td>
+                                <td>{{skoczek2015.pts}}</td>
+
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    {{1+1}}
+
+    <footer>
+        <i class="fab fa-3x fa-github"></i><i class="fab fa-3x fa-linkedin-in"></i>
+    </footer>
+
+
+    <!--script-->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="data/wyniki2015.js"></script>
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

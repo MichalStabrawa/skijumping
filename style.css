@@ -1,0 +1,41 @@
+.center-block {
+    float: none;
+}
+
+h1{
+    text-align: center;
+}
+
+
+/*header style*/
+
+header {display:flex;
+    justify-content: center;
+    align-items:center;
+    background: #002395;
+    height: 250px;
+}
+
+header h1 {
+    color: #fff;
+    text-align: center;
+    margin: 0px;
+  background:transparent;
+}
+
+.btn-primary{
+    margin-bottom: 10px;
+    margin-top:10px;
+}
+
+/*footer style*/
+footer{display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+    background:  #002395;;
+}
+
+footer i{
+    color:#fff;
+}
