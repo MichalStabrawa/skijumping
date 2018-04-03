@@ -34,7 +34,41 @@ header h1 {
 input-group{
     margin-bottom: 10px;
 }
+/*class center-block style img*/
+.center-block figure{
+    text-align:center;
+    
+}
 
+.center-block figure img{
+    width: 150px;
+}
+/*section style*/
+.jumper{
+    margin-top:20px;
+    color:#000;
+}
+
+.flex-profile{
+    display: flex;
+}
+
+/*fourJumper section*/
+
+.fourJumper::before{
+    content:"";
+    display:block;
+    border:0.5px solid #c4c4c4;
+    margin-top: 40px;
+    
+}
+.fourJumper .col-md-12{
+text-align: center;
+}
+
+.fourJumper img{
+    width: 100px;
+}
 
 /*footer style*/
 

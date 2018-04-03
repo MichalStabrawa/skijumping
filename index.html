@@ -37,7 +37,8 @@
     <div class="container" ng-controller="kontrolerTabeli">
         <div class="row">
             <div class="col-sm-8 center-block">
-                <h1><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">Klasyfikacja skoczków narciarskich</h1>
+                <h1>Klasyfikacja skoczków narciarskich</h1>
+                <figure><img src="img/2000px-FIS_Crystal_Globe.svg.png" alt="krysztalowaKula"></figure>
                 <!-- Single button -->
                 <div class="btn-group">
                     <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -166,6 +167,40 @@
             </div>
         </div>
     </div>
+<section class="fourJumper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+               <h2>Turniej 4 Skoczni</h2>
+                <figure><img src="img/Vierschanzentournee_logo%20(1).png" alt=""></figure>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-sm-8 center-block" >
+                 <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Rok zawodów<span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#" ng-click="myFunc()">2018</a></li>
+                        <li><a href="#" ng-click="myFunc2()">2017</a></li>
+                        <li><a href="#" ng-click="myFunc3()">2016</a></li>
+                        <li><a href="" ng-click="myFunc4()">2015</a></li>
+
+                    </ul>
+                </div>
+
+
+                <div class="input-group"><span class="input-group-addon">Szukaj</span>
+                    <input type="text" class="form-control" ng-model="wyszukiwarka">
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
 
 
 
